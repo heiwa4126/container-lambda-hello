@@ -6,7 +6,9 @@
 
 # いるもの
 
-aws cli と AWSのアカウント
+- AWSのアカウント
+- aws cli
+- docker
 
 
 # デプロイ手順
