@@ -1,11 +1,17 @@
 # container-lambda-hello
 
 [コンテナ利用者に捧げる AWS Lambda の新しい開発方式 ! - 変化を求めるデベロッパーを応援するウェブマガジン | AWS](https://aws.amazon.com/jp/builders-flash/202103/new-lambda-container-development/?awsf.filter-name=*all)
-を元に作ったサンプル
+を元に作った
+コンテナlambdaのサンプル
+
+# いるもの
+
+aws cli と AWSのアカウント
+
 
 # 手順
 
-`config.sh` を編集する(そのままでもOK)
+まず `config.sh` を編集する(そのままでもOK)
 
 以下の順で実行
 ```sh
@@ -16,12 +22,14 @@
 exit
 ```
 
+
 # テスト
 
 ```sh
 ./invoke-lambda.sh    # 普通のlambdaを起動
 ./invoke-container.sh # コンテナ版lambdaを起動
 ```
+
 
 # 削除
 
