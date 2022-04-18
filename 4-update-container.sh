@@ -26,7 +26,7 @@ DIGEST=$(aws ecr list-images --repository-name func1 \
 
 # lambda更新
 aws lambda update-function-code \
-  --function-name func1-container \
+  --function-name "$FUNCC" \
   --image-uri "$URI/func1@${DIGEST}"
 
 echo "invokeできるようになるまで数10秒かかります"

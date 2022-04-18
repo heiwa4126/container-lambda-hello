@@ -2,6 +2,7 @@
 # app.pyをlambdaコンテナとしてデプロイ
 # 1-makerole.shの次に実行
 
+# イメージ作成
 docker build -t func1 .
 
 # ECR に今回作成する Lambda 関数のイメージ用のリポジトリを作成
@@ -24,7 +25,7 @@ DIGEST=$(aws ecr list-images --repository-name func1 \
 
 # lambda作成
 aws lambda create-function \
-  --function-name func1-container \
+  --function-name "$FUNCC" \
   --package-type Image \
   --code ImageUri=${ACCOUNTID}.dkr.ecr.${REGION}.amazonaws.com/func1@${DIGEST} \
   --role ${ROLE_ARN}
