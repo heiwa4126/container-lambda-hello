@@ -24,12 +24,32 @@
 exit
 ```
 
-
 # テスト
 
 ```sh
 ./invoke-lambda.sh    # 普通のlambdaを起動
 ./invoke-container.sh # コンテナ版lambdaを起動
+```
+
+
+# コンテナlambdaの更新
+
+app.pyを修正の後(たとえば!の数を増やしてみる等)
+```sh
+./0-setenv.sh
+./4-update-container.sh
+exit
+```
+
+単にECR上のイメージを更新しただけじゃダメなのがミソ。
+
+
+# ローカルのdockerでテスト
+
+```sh
+./run_local_docker.sh   # 9090/tcpでlambda起動
+./test_local_docker.sh  # 妙なURLでlambdaを呼び出す
+./stop_local_docker.sh  # docker停止
 ```
 
 
